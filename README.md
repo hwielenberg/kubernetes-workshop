@@ -63,4 +63,45 @@ status: {}
 Zum testen könnt ihr kubectl `exec frontend-123-chg -- wget http://localhost:3000 -O -` nutzen.
 (Was aus unerklärlichen Gründen nicht jedes Mal klappt. Aber spätestens der dritte Versuch sollte.)
 
+## 2. Aufgabe
+Jetzt kommt der Service und der ingress dazu.
 
+Denk dran `{my-dwarf}` zu ersetzen!
+
+Wieder analog zu:
+```
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app: raumschilder
+  name: raumschilder
+spec:
+  ports:
+  - name: nodejs
+    port: 3000
+  selector:
+    app: raumschilder
+```
+und
+```
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  labels:
+    app: raumschilder
+  name: raumschilder
+  annotations:
+    ingress.kubernetes.io/whitelist-source-range: "10.66.0.0/16,192.168.0.0/16"
+spec:
+  rules:
+  - host: {my-dwarf}.ingress.aws-dev.neuland-bfi.de
+    http:
+      paths:
+      - backend:
+          serviceName: raumschilder
+          servicePort: 3000
+        path: /
+```
+Testen könnt ihr indem ihr `http://dori.ingress.aws-dev.neuland-bfi.de` im Browser öffnet.
