@@ -23,13 +23,13 @@ Datei als `~/.kube/config` ablegen.
 
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 
-`kubectl get pods` (pods, deployment, service, ...)  Komponenten anzeigen lassen
-`kubectl create -f path/to/config.yaml` Neue Komponente erstellen
-`kubectl replace -f path/to/config.yaml` Komponente ändern
-`kubectl delete -f path/to/config.yaml` Komponente löschen
-`kubectl delete deployment frontend` (pods, deployment, service, ...) Komponente löschen
-`kubectl describe pod frontend-123-chg` Metainformationen vom pod anzeigen
-`kubectl log frontend-123-chg` Application Logs anzeigen
+* `kubectl get pods` (pods, deployment, service, ...)  Komponenten anzeigen lassen
+* `kubectl create -f path/to/config.yaml` Neue Komponente erstellen
+* `kubectl replace -f path/to/config.yaml` Komponente ändern
+* `kubectl delete -f path/to/config.yaml` Komponente löschen
+* `kubectl delete deployment frontend` (pods, deployment, service, ...) Komponente löschen
+* `kubectl describe pod frontend-123-chg` Metainformationen vom pod anzeigen
+* `kubectl log frontend-123-chg` Application Logs anzeigen
 
 
 # Workshop
