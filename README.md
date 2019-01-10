@@ -124,3 +124,19 @@ Daher müsst ihr dem docker image vom frontend eine Umgebungsvariable mitgeben.
 `API_ROOT_URL` = `http://{my-dwarf}-api.ingress.aws-dev.neuland-bfi.de/`
 
 Google (oder so) ist euer Freund!
+
+## 5. Aufgabe
+
+Im backend die deployment Strategie konfigurieren:  RollingUpdate mit maxSurge von 1.
+
+Und eine livenessProbe + readinessProbe im backend konfigurieren.
+
+Ihr könnt einfach einen HTTP Call auf `localhost:9000/` machen. Wenn ein 200 status code zurück kommt ist alles gut.
+
+Testen könnt ihr das indem ihr beim backend das image `026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_backend:latest` einspielt. Das fährt (noch) nicht hoch.
+
+Und ihr könnt euch auch auf die Fehlersuche machen, warum das backend nicht hochfahren will. (Die nächste Aufgabe beschreibt wie der Fehler zu beheben ist)
+
+Beim frontend könnt ihr die probes auch gerne analog hinzufügen.
+
+
