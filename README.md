@@ -35,4 +35,29 @@ https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 # Workshop
 ## 1. Aufgabe
 Erstellt ein Deployment für folgendes image:
-`026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_frontend:latest``
+`026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_frontend:latest`
+Ihr könnt euch an dieser yaml orientieren:
+```
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: raumschilder
+  name: raumschilder
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: raumschilder
+    spec:
+      containers:
+      - image: gitlab.neuland-bfi.de:5043/stefan.kuper/raumschilder:latest
+        name: nodejs
+        resources: {}
+      restartPolicy: Always
+status: {}
+```
+
+
