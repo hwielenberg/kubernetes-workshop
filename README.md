@@ -60,4 +60,7 @@ spec:
 status: {}
 ```
 
+Zum testen könnt ihr kubectl `exec frontend-123-chg -- wget http://localhost:3000 -O -` nutzen.
+(Was aus unerklärlichen Gründen nicht jedes Mal klappt. Aber spätestens der dritte Versuch sollte.)
+
 
