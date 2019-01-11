@@ -15,7 +15,7 @@ brew install bash-completion
 
 Kube Configs für Neuland Cluster:
 
-https://gitlab.neuland-bfi.de/admins/ansible-neuland-infra/tree/master/roles/kubernetes/users
+https://gitlab.neuland-bfi.de/kubernetes-workshop/vortrag/tree/master/users
 
 Datei als `~/.kube/config` ablegen.
 
