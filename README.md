@@ -134,8 +134,7 @@ Und eine livenessProbe + readinessProbe im backend konfigurieren.
 Ihr könnt einfach einen HTTP Call auf `localhost:9000/` machen. Wenn ein 200 status code zurück kommt ist alles gut.
 
 Testen könnt ihr das indem ihr beim backend das image `026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_backend:latest` einspielt. Das fährt (noch) nicht hoch.
-
-Und ihr könnt euch auch auf die Fehlersuche machen, warum das backend nicht hochfahren will. (Die nächste Aufgabe beschreibt wie der Fehler zu beheben ist)
+Dann sollte kubernetes versuchen die neuen Pods hochzufahren, aber die alten nciht löschen, da die neuen niemals den status ready erreichen.
 
 Beim frontend könnt ihr die probes auch gerne analog hinzufügen.
 
