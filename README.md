@@ -139,3 +139,25 @@ Und ihr könnt euch auch auf die Fehlersuche machen, warum das backend nicht hoc
 
 Beim frontend könnt ihr die probes auch gerne analog hinzufügen.
 
+
+## 6. Aufgabe
+
+### 6.1 Secret hinzufügen
+Dem backend die Datenbankzugänge verfügbar machen.
+
+Die Datei `database.conf` mit folgendem Inhalt anlegen. Variable ersetzen!
+```
+include "application.conf"
+
+db.default.driver=com.mysql.jdbc.Driver
+db.default.url="jdbc:mysql://mariadb-mariadb.default.svc.cluster.local:3306/{my-dwarf}"
+db.default.user={my-dwarf}
+db.default.password="{my-dwarf}"
+ebean.default="models.*"
+```
+
+Aus der Datei ein k8s Secret vom Typ `generic` erstellen.
+
+### 6.2 Backend anpassen
+1. Das secret muss in das docker image reingemounted werden.
+2. Der docker backend Prozess muss folgendes Argument mitgeliefert bekommen `-Dconfig.file=/path/to/file/in/container/database.conf`
