@@ -105,3 +105,13 @@ spec:
         path: /
 ```
 Testen könnt ihr indem ihr `http://dori.ingress.aws-dev.neuland-bfi.de` im Browser öffnet.
+
+
+## 3. Aufgabe
+
+Dann könnt ihr mit dem backend weitermachen.
+Deployment, service und ingress erstellen.
+
+* image: `026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_backend:mysql-memory`
+* ingress host: http://`{my-dwarf}`-**api**.ingress.aws-dev.neuland-bfi.de
+* Die Application läuft auf port `9000`!
