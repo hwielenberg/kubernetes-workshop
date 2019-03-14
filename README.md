@@ -114,3 +114,13 @@ Deployment, service und ingress erstellen.
 * image: `026875375293.dkr.ecr.eu-central-1.amazonaws.com/workshop_backend:mysql-memory`
 * ingress host: http://`{my-dwarf}`-**api**.ingress.aws-dev.neuland-bfi.de
 * Die Application läuft auf port `9000`!
+
+
+## 4. Aufgabe
+
+Das frontend muss das backend kennen, damit es requests dahin schicken kann.
+Daher müsst ihr dem docker image vom frontend eine Umgebungsvariable mitgeben.
+
+`API_ROOT_URL` = `http://{my-dwarf}-api.ingress.aws-dev.neuland-bfi.de/`
+
+Google (oder so) ist euer Freund!
